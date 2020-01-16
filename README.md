@@ -1,2 +1,2 @@
 # archlinux-aur-docker
-archlinux docker image with support of aUR packages (through `yaourt`)
+archlinux docker image with support of AUR packages (through `yaourt`)
