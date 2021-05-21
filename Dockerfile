@@ -14,7 +14,7 @@ RUN git clone https://aur.archlinux.org/package-query.git
 WORKDIR /tmp/package-query
 RUN makepkg
 USER root
-RUN pacman -U --noconfirm *.pkg.tar.xz
+RUN pacman -U --noconfirm *.pkg.tar.zst
 
 USER arch-user
 WORKDIR /tmp
@@ -22,7 +22,7 @@ RUN git clone https://aur.archlinux.org/yaourt.git
 WORKDIR /tmp/yaourt
 RUN makepkg
 USER root
-RUN pacman -U --noconfirm *.pkg.tar.xz
+RUN pacman -U --noconfirm *.pkg.tar.zst
 
 USER root
 WORKDIR /tmp
