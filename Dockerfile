@@ -1,4 +1,4 @@
-FROM archlinux/base:latest
+FROM archlinux:base
 MAINTAINER Azat Abdullin <abdullin@kspt.icc.spbstu.ru>
 
 WORKDIR /home
