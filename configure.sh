@@ -20,5 +20,6 @@ pacman -S --noconfirm \
 	gettext \
 	wget \
 	git \
-	yajl
+	yajl \
+	go
 
