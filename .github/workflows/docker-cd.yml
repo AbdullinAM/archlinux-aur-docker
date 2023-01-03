@@ -17,7 +17,7 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSOWRD: ${{secrets.DOCKER_PASSWORD}}
         MY_TEST: ${{secrets.TEST}}
-      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD registry-1.docker.io
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag abdullin/archlinux-aur:latest
