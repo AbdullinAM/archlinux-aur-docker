@@ -1,6 +1,9 @@
 name: Docker Image CI
 
-on: [push]
+on: 
+  release:
+    types: published
+
 
 jobs:
 
@@ -9,6 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{setrects.DOCKER_USER}}
+        DOCKER_PASSOWRD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag archlinux-aur:$(date +%s)
+      run: docker build . --file Dockerfile --tag abdullin/archlinux-aur:latest
+
+    - name: Docker push
+      run: docker push ${{secrets.DOCKER_USER}}/archlinux-aur:latest
